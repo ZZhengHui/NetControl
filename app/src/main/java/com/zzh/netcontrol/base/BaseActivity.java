@@ -17,12 +17,14 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         presenter = initPresenter();
+        presenter.attachView(this);
         initViewAndEvent();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        presenter.detachView();
     }
 
     public abstract int getLayoutId();
