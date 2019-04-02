@@ -5,4 +5,6 @@ package com.zzh.netcontrol.tian
  * Author 13651
  * Description
  */
-class RiTianActivity {}
+class RiTianActivity {
+    val a = "你大爷"
+}
