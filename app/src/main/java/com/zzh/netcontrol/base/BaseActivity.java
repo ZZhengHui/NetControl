@@ -13,11 +13,12 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     private T presenter;
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         presenter = initPresenter();
-        presenter.attachView(this);
+        if (presenter != null) presenter.attachView(this);
         initViewAndEvent();
     }
 
