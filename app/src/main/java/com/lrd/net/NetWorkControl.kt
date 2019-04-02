@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetWorkControl {
 
     private val mRetrofit:Retrofit
-    var mBaseUrl:String = ""
+    var mBaseUrl:String = "http://www.baidu.com"
     companion object{
         @Volatile
         private var instance: NetWorkControl? = null
