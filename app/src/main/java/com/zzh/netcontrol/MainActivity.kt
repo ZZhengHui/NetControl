@@ -1,7 +1,9 @@
-package com.zzh.netcontrol.main
+package com.zzh.netcontrol
 
-import com.zzh.netcontrol.R
 import com.zzh.netcontrol.base.BaseActivity
+import com.zzh.netcontrol.main.MainContract
+import com.zzh.netcontrol.main.MainContractImpl
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainContractImpl>(), MainContract.View {
     override fun getLayoutId(): Int {
@@ -9,7 +11,9 @@ class MainActivity : BaseActivity<MainContractImpl>(), MainContract.View {
     }
 
     override fun initViewAndEvent() {
-
+        clickTv.setOnClickListener {
+            presenter.requestNetData("")
+        }
     }
 
     override fun showProgressDialog() {
@@ -24,7 +28,7 @@ class MainActivity : BaseActivity<MainContractImpl>(), MainContract.View {
     }
 
     override fun showMsg(msg: String) {
-
+        showToast(msg)
     }
 
     override fun initPresenter(): MainContractImpl {
