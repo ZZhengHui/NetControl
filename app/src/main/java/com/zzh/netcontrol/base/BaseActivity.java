@@ -17,7 +17,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         presenter = initPresenter();
-        presenter.attachView(this);
+        if (presenter == null) presenter.attachView(this);
         initViewAndEvent();
     }
 
