@@ -17,13 +17,14 @@ class MainActivity : BaseActivity<MainContractImpl>(), MainContract.View {
     }
 
     override fun showProgressDialog() {
+
     }
 
     override fun handleData() {
 
     }
 
-    override fun hidProgressDialog() {
+    override fun hideProgressDialog() {
 
     }
 

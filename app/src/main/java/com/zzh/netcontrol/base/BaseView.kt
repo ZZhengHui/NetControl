@@ -7,6 +7,6 @@ package com.zzh.netcontrol.base
  */
 interface BaseView {
     fun showProgressDialog()
-    fun hidProgressDialog()
+    fun hideProgressDialog()
     fun handleData()
 }
