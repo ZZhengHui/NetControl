@@ -5,7 +5,7 @@ package com.zzh.netcontrol.base
  * Author 13651
  * Description
  */
-interface BasePresenter<T : BaseView> {
+interface BasePresenter<T> {
     fun attachView(view: T)
     fun detachView()
 }

@@ -1,3 +1,4 @@
+/*
 package com.lrd.ui
 
 import com.lrd.base.BaseActivity
@@ -7,10 +8,12 @@ import com.lrd.contract.WebContract
 import com.lrd.presenter.WebPresenter
 import com.zzh.netcontrol.R
 
+*/
 /**
  * Created By LRD
  * on 2019/4/8  notes：
- */
+ *//*
+
 class WebViewActivity: BaseActivity<WebPresenter>(),WebContract.View {
     override fun setTitle() {
 
@@ -28,4 +31,4 @@ class WebViewActivity: BaseActivity<WebPresenter>(),WebContract.View {
         mPresenter.init()
     }
 
-}
+}*/

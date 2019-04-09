@@ -1,12 +1,10 @@
 package com.lrd.base
 
-import android.view.View
-
 /**
  * Created By LRD
  * on 2019/4/8  notes：
  */
-interface IPresenter<V :IView> {
+interface IPresenter<in V/* :IView*/> {
     /**
      * bind View
      */

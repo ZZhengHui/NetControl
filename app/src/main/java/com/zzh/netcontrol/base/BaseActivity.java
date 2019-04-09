@@ -10,15 +10,16 @@ import android.widget.Toast;
  * Author 13651
  * Description
  */
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V>> extends AppCompatActivity implements BaseView {
     protected T presenter;
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         presenter = initPresenter();
-        if (presenter != null) presenter.attachView(this);
+        if (presenter != null) presenter.attachView((V) this);
         initViewAndEvent();
     }
 
