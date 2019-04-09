@@ -4,7 +4,7 @@ package com.lrd.base
  * Created By LRD
  * on 2019/4/8  notes：
  */
-interface IView {
+interface BaseView {
     /**
      * 绑定View
      */
