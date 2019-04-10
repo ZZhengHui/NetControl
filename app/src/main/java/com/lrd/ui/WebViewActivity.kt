@@ -1,3 +1,5 @@
+package com.lrd.ui
+
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.os.Build
@@ -7,15 +9,16 @@ import android.webkit.*
 import android.widget.FrameLayout
 import com.lrd.base.BaseActivity
 import com.lrd.contract.WebContract
+import com.lrd.presenter.WebPresenter
 import com.zzh.netcontrol.R
 import kotlinx.android.synthetic.main.my_web_layout.*
 import kotlinx.android.synthetic.main.toolbar_layout.*
 
 /**
  * Created By LRD
- * on 2019/4/8  notes：
+ * on 2019/4/10  notes：
  */
-class WebViewActivity : BaseActivity<WebPresenter>(), WebContract.View {
+class WebViewActivity : BaseActivity<WebPresenter>(),WebContract.View{
     private lateinit var mWebView: WebView
 
     override fun getLayoutId(): Int {
