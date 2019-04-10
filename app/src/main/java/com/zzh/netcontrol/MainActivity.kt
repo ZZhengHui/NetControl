@@ -1,5 +1,7 @@
 package com.zzh.netcontrol
 
+import android.content.Intent
+import com.lrd.ui.WebViewActivity
 import com.zzh.netcontrol.base.KotlinBaseActivity
 import com.zzh.netcontrol.main.MainContract
 import com.zzh.netcontrol.main.MainContractImpl
@@ -13,6 +15,7 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
     override fun initViewAndEvent() {
         clickTv.setOnClickListener {
             presenter!!.requestNetData("")
+            startActivity(Intent(applicationContext, WebViewActivity::class.java))      //跳转webview界面
         }
     }
 
