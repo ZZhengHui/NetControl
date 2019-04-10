@@ -15,7 +15,6 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
     override fun initViewAndEvent() {
         clickTv.setOnClickListener {
             presenter!!.requestNetData("")
-            startActivity(Intent(applicationContext, WebViewActivity::class.java))      //跳转webview界面
         }
     }
 
@@ -33,6 +32,7 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
 
     override fun showMsg(msg: String) {
         showToast(msg)
+        startActivity(Intent(applicationContext, WebViewActivity::class.java))      //跳转webview界面
     }
 
     override fun createPresenter(): MainContractImpl {
