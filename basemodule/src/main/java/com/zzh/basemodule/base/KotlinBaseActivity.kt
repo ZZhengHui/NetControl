@@ -1,15 +1,15 @@
-package com.zzh.netcontrol.base
+package com.zzh.basemodule.base
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Time 2019/4/9
  * Author 13651
  * Description
  */
-abstract class KotlinBaseActivity<V : BaseView, P : BasePresenter<V>> : AppCompatActivity(), BaseView {
+public abstract class KotlinBaseActivity<V : BaseView, P : BasePresenter<V>> : AppCompatActivity(), BaseView {
 
     protected var presenter: P? = null
 

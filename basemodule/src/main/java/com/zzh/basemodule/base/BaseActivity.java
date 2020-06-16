@@ -1,9 +1,12 @@
-package com.zzh.netcontrol.base;
+package com.zzh.basemodule.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Time 2019/4/1
@@ -23,8 +26,12 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
         initViewAndEvent();
     }
 
-    public void showToast(String text) {
+    protected void showToast(String text) {
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    protected <T extends View> T getView(@IdRes int id) {
+        return (T) findViewById(id);
     }
 
     @Override

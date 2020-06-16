@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp12"
+        android:text="startService" />
+
+    <TextView
+        android:id="@+id/bind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp12"
+        android:text="bindService" />
+
+    <TextView
+        android:id="@+id/stopStartService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp12"
+        android:text="stop StartService" />
+
+    <TextView
+        android:id="@+id/stopBindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp12"
+        android:text="stop BindService" />
+
+    <TextView
+        android:id="@+id/createReceive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp12"
+        android:background="?android:selectableItemBackground"
+        android:padding="@dimen/dp12"
+        android:text="createReceive" />
+
+    <TextView
+        android:id="@+id/testProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp12"
+        android:background="?android:selectableItemBackground"
+        android:padding="@dimen/dp12"
+        android:text="进程间通信" />
+
+
+</LinearLayout>

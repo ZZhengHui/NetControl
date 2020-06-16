@@ -1,7 +1,7 @@
 package com.zzh.netcontrol.main
 
-import com.zzh.netcontrol.base.BasePresenter
-import com.zzh.netcontrol.base.BaseView
+import com.zzh.basemodule.base.BasePresenter
+import com.zzh.basemodule.base.BaseView
 
 /**
  * Time 2019/4/1

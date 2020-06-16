@@ -1,8 +1,12 @@
 package com.zzh.netcontrol
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lrd.ui.WebViewActivity
-import com.zzh.netcontrol.base.KotlinBaseActivity
+import com.zzh.basemodule.base.KotlinBaseActivity
+import com.zzh.netcontrol.adapter.MenuAdapter
 import com.zzh.netcontrol.main.MainContract
 import com.zzh.netcontrol.main.MainContractImpl
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,6 +17,36 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
     }
 
     override fun initViewAndEvent() {
+        menuRecycler.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+        val menuAdapter = MenuAdapter(applicationContext)
+        menuRecycler.adapter = menuAdapter
+        menuAdapter.addItem("跳转RecyclerActivity")
+        menuAdapter.addItem("联动滑动选择")
+        menuAdapter.addItem("测试EventBus")
+        menuAdapter.addItem("嵌套滑动")
+        menuAdapter.addItem("Rxjava学习")
+        menuAdapter.setOnItemClickListener { _, positon ->
+            run {
+                when (positon) {
+                    0 -> {
+                        startActivity(Intent(applicationContext, RecyclerActivity::class.java))
+                    }
+                    1 -> {
+                        startActivity(Intent(applicationContext, ScrollSelectActivity::class.java))
+                    }
+                    2 -> {
+                        startActivity(Intent(applicationContext, TestEventBusActivity::class.java))
+                    }
+                    3 -> {
+                        startActivity(Intent(applicationContext, NestingScrollActivity::class.java))
+                    }
+                    4 -> {
+                        startActivity(Intent(applicationContext, TestRxjavaActivity::class.java))
+                    }
+                }
+            }
+        }
+
         clickTv.setOnClickListener {
             presenter!!.requestNetData("")
         }
@@ -37,6 +71,12 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
 
     override fun createPresenter(): MainContractImpl {
         return MainContractImpl()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        //界面加载完成
+        window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
 }

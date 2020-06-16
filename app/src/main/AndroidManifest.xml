@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zzh.netcontrol">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- 声名本应用允许进程间通信的权限 -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,15 +11,52 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".TestEventBusActivity" />
+        <activity android:name=".TestProviderActivity" />
+        <activity android:name=".TestActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name="com.lrd.ui.WebViewActivity" />
+        <activity android:name=".ScrollSelectActivity" /> <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <activity android:name=".RecyclerActivity" /> <!-- receiver -->
+        <activity android:name=".TestRxjavaActivity" />
+        <activity android:name=".NestingScrollActivity" />
+
+        <receiver android:name=".receiver.MyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- <action android:name="android.intent.action.ACTION_SHUTDOWN" /> -->
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.TestOrderReceiverOne" />
+        <receiver android:name=".receiver.TestOrderReceiverTwo" />
+        <receiver android:name=".receiver.TestOrderReceiverThree" /> <!-- service -->
+        <service android:name=".service.TestIntentService" />
+        <service android:name=".service.TestService" />
+        <service
+            android:name=".service.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
+
+    <uses-permission
+        android:name="com.zzh.write"
+        android:protectionLevel="normal" />
+    <uses-permission
+        android:name="com.zzh.read"
+        android:protectionLevel="normal" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission
+        android:name="com.zzh.permission.provider"
+        android:protectionLevel="normal" />
 
 </manifest>
