@@ -22,11 +22,12 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
         menuRecycler.adapter = menuAdapter
         menuAdapter.addItem("跳转RecyclerActivity")
         menuAdapter.addItem("联动滑动选择")
-        menuAdapter.addItem("测试EventBus")   
+        menuAdapter.addItem("测试EventBus")
         menuAdapter.addItem("嵌套滑动")
         menuAdapter.addItem("Rxjava学习")
         menuAdapter.addItem("wheelView")
         menuAdapter.addItem("Fragment Test")
+        menuAdapter.addItem("TestGitVersion")
 
         menuAdapter.setOnItemClickListener { _, positon ->
             run {
