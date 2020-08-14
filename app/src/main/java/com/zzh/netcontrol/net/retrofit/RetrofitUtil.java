@@ -1,9 +1,11 @@
 package com.zzh.netcontrol.net.retrofit;
 
-import com.zzh.netcontrol.AndroidScheduler;
+//import com.zzh.netcontrol.AndroidScheduler;
+
 import com.zzh.netcontrol.net.Api;
 
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
@@ -43,7 +45,7 @@ public class RetrofitUtil {
     public void get() {
         getApi().getData()
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidScheduler.mainThread())
+                .observeOn(Schedulers.computation())
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {

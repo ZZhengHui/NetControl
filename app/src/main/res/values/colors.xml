@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="login_button_normal">#169fff</color>
+    <color name="login_button_pressed">#1073b9</color>
 </resources>

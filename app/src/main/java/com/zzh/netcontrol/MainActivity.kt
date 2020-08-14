@@ -25,23 +25,32 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
         menuAdapter.addItem("测试EventBus")
         menuAdapter.addItem("嵌套滑动")
         menuAdapter.addItem("Rxjava学习")
+        menuAdapter.addItem("wheelView")
+        menuAdapter.addItem("Fragment Test")
+
         menuAdapter.setOnItemClickListener { _, positon ->
             run {
                 when (positon) {
                     0 -> {
-                        startActivity(Intent(applicationContext, RecyclerActivity::class.java))
+                        startActivity(Intent(this, RecyclerActivity::class.java))
                     }
                     1 -> {
-                        startActivity(Intent(applicationContext, ScrollSelectActivity::class.java))
+                        startActivity(Intent(this, ScrollSelectActivity::class.java))
                     }
                     2 -> {
-                        startActivity(Intent(applicationContext, TestEventBusActivity::class.java))
+                        startActivity(Intent(this, TestEventBusActivity::class.java))
                     }
                     3 -> {
-                        startActivity(Intent(applicationContext, NestingScrollActivity::class.java))
+                        startActivity(Intent(this, NestingScrollActivity::class.java))
                     }
                     4 -> {
-                        startActivity(Intent(applicationContext, TestRxjavaActivity::class.java))
+                        startActivity(Intent(this, TestRxjavaActivity::class.java))
+                    }
+                    5 -> {
+                        startActivity(Intent(this, WheelViewActivity::class.java))
+                    }
+                    6 -> {
+                        startActivity(Intent(this, TestFragmentActivity::class.java))
                     }
                 }
             }

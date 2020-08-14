@@ -2,7 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zzh.netcontrol">
-    <!-- 声名本应用允许进程间通信的权限 -->
+
+    <uses-permission
+        android:name="com.zzh.write"
+        android:protectionLevel="normal" />
+    <uses-permission
+        android:name="com.zzh.read"
+        android:protectionLevel="normal" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission
+        android:name="com.zzh.permission.provider"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".WheelViewActivity"/>
         <activity android:name=".TestEventBusActivity" />
         <activity android:name=".TestProviderActivity" />
         <activity android:name=".TestActivity" />
@@ -28,6 +42,7 @@
         <activity android:name=".RecyclerActivity" /> <!-- receiver -->
         <activity android:name=".TestRxjavaActivity" />
         <activity android:name=".NestingScrollActivity" />
+        <activity android:name=".TestFragmentActivity" />
 
         <receiver android:name=".receiver.MyReceiver">
             <intent-filter>
@@ -44,19 +59,5 @@
             android:name=".service.JobSchedulerService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
-
-    <uses-permission
-        android:name="com.zzh.write"
-        android:protectionLevel="normal" />
-    <uses-permission
-        android:name="com.zzh.read"
-        android:protectionLevel="normal" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-    <uses-permission
-        android:name="com.zzh.permission.provider"
-        android:protectionLevel="normal" />
 
 </manifest>
