@@ -36,6 +36,7 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
         //Tag : 新版本开发
         menuAdapter.addItem("新版本v1.0.1 开发完成了")
         Log.e("Bug", "这里又一个没有发现的bug～")
+        Log.e("fixed Bug", "bug 修复了～")
 
         menuAdapter.setOnItemClickListener { _, positon ->
             run {
