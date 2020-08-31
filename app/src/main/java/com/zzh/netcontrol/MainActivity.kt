@@ -29,6 +29,10 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
         menuAdapter.addItem("Fragment Test")
         menuAdapter.addItem("TestGitVersion")
 
+        //测试tag2
+        menuAdapter.addItem("TestGitVersion2")
+
+
         menuAdapter.setOnItemClickListener { _, positon ->
             run {
                 when (positon) {
