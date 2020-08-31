@@ -3,6 +3,7 @@ package com.zzh.netcontrol
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lrd.ui.WebViewActivity
 import com.zzh.basemodule.base.KotlinBaseActivity
@@ -32,6 +33,9 @@ class MainActivity : KotlinBaseActivity<MainContract.View, MainContractImpl>(), 
         //测试tag2
         menuAdapter.addItem("TestGitVersion2")
 
+        //Tag : 新版本开发
+        menuAdapter.addItem("新版本v1.0.1 开发完成了")
+        Log.e("Bug", "这里又一个没有发现的bug～")
 
         menuAdapter.setOnItemClickListener { _, positon ->
             run {
